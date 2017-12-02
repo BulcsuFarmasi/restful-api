@@ -15,14 +15,14 @@ router.post('/', (req, res, next) => {
 
 router.get('/:orderId', (req, res, next) => {
     res.status(201).json({
-        message: 'Orders details',
+        message: 'Order details',
         orderId: req.params.orderId
     })
 })
 
 router.delete('/:orderId', (req, res, next) => {
     res.status(201).json({
-        message: 'Orders deleted',
+        message: 'Order deleted',
         orderId: req.params.orderId
     })
 })
