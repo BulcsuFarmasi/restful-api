@@ -13,4 +13,11 @@ router.post('/', (req, res, next) => {
     })
 })
 
+router.get('/:orderId', (req, res, next) => {
+    res.status(201).json({
+        message: 'Orders details',
+        orderId: req.params.orderId
+    })
+})
+
 module.exports = router;
