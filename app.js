@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
-mongoose.connect(`mongodb://restful-api:${proccess.env.MONGO_ATLAS_PW}@restful-api-shard-00-00-ij6xo.mongodb.net:27017,restful-api-shard-00-01-ij6xo.mongodb.net:27017,restful-api-shard-00-02-ij6xo.mongodb.net:27017/test?ssl=true&replicaSet=restful-api-shard-0&authSource=admin`, {
+mongoose.connect(`mongodb://restful-api:${process.env.MONGO_ATLAS_PW}@restful-api-shard-00-00-ij6xo.mongodb.net:27017,restful-api-shard-00-01-ij6xo.mongodb.net:27017,restful-api-shard-00-02-ij6xo.mongodb.net:27017/test?ssl=true&replicaSet=restful-api-shard-0&authSource=admin`, {
     useMongoClient: true
 });
 
