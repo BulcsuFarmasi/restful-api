@@ -17,12 +17,19 @@ router.post('/', (req, res, next) => {
         price: req.body.price
     });
     product.save()
-        .then((result) => {console.log(result)})
-        .catch((err) => {console.log(err)});
-        res.status(201).json({
-        message: 'Handling POST request to /products',
-        createdProduct: product
-    })
+        .then((result) => {
+            console.log(result);
+            res.status(201).json({
+                message: 'Handling POST request to /products',
+                createdProduct: result
+            })
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(500).json({
+                error: err
+            })
+        });
 })
 
 router.get('/:productId', (req, res, next) => {
