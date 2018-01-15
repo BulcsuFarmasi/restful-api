@@ -6,4 +6,5 @@ const productSchema = mongoose.Schema({
     price: Number
 });
 
+
 module.exports = mongoose.model('Product', productSchema);

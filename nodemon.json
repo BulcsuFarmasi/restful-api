@@ -1,6 +1,6 @@
 {
   "env": {
-    "MONGO_ATLAS_PW": "G85L*ev$2z7IX8g0"
+    "MONGO_ATLAS_PW": "restful-api"
   }
 
 }
