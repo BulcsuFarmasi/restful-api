@@ -11,7 +11,7 @@ mongoose.connect(`mongodb://restful-api:${process.env.MONGO_ATLAS_PW}@restful-ap
     useMongoClient: true
 });
 
-mongoose.Promise = require('bluebird');
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
