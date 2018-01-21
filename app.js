@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+const userRoutes = require('./api/routes/users');
 
 mongoose.connect(`mongodb://restful-api:${process.env.MONGO_ATLAS_PW}@restful-api-shard-00-00-ij6xo.mongodb.net:27017,restful-api-shard-00-01-ij6xo.mongodb.net:27017,restful-api-shard-00-02-ij6xo.mongodb.net:27017/test?ssl=true&replicaSet=restful-api-shard-0&authSource=admin`, {
     useMongoClient: true
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
 // Routes which should handle requests
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
