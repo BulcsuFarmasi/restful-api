@@ -1,6 +1,7 @@
 {
   "env": {
-    "MONGO_ATLAS_PW": "restful-api"
+    "MONGO_ATLAS_PW": "restful-api",
+    "JWT_KEY": "secret"
   }
 
 }
