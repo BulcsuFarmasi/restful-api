@@ -35,6 +35,8 @@ router.post('/', checkAuth, upload.single('productImage'), ProductsController.pr
 
 router.get('/:productId', ProductsController.products_get_product);
 
+router.patch('/:productId', checkAuth, ProductsController.products_update_product);
+
 router.delete('/:productId', checkAuth, (req, res, next) => {
     const id = req.params.productId;
     Product.remove({_id: id})
@@ -53,6 +55,6 @@ router.delete('/:productId', checkAuth, (req, res, next) => {
             console.log(err);
             res.status(500).json({error: err});
         });
-});
+}
 
 module.exports = router;

@@ -94,9 +94,9 @@ exports.products_get_product = (req, res, next) => {
             console.log(err);
             res.status(500).json({error: err});
         })
-});
+};
 
-router.patch('/:productId', checkAuth, (req, res, next) => {
+exports.products_update_product = (req, res, next) => {
     const id = req.params.productId;
     const updateOps = {};
     for (const ops of req.body) {
@@ -121,4 +121,6 @@ router.patch('/:productId', checkAuth, (req, res, next) => {
             })
         })
 };
+
+
 
