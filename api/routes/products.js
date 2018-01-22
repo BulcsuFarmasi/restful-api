@@ -33,31 +33,7 @@ router.get('/', ProductsController.products_get_all);
 
 router.post('/', checkAuth, upload.single('productImage'), ProductsController.products_create_product);
 
-router.patch('/:productId', checkAuth, (req, res, next) => {
-    const id = req.params.productId;
-    const updateOps = {};
-    for (const ops of req.body) {
-        updateOps[ops.propName] = ops.value
-    }
-    Product.update({_id: id}, {$set: updateOps})
-        .exec()
-        .then(result => {
-            console.log(result);
-            res.status(200).json({
-                message: 'Product updated',
-                request: {
-                    type: 'GET',
-                    url: 'http://localhost:3000/products/' + id
-                }
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            })
-        })
-})
+router.get('/:productId', ProductsController.products_get_product);
 
 router.delete('/:productId', checkAuth, (req, res, next) => {
     const id = req.params.productId;
